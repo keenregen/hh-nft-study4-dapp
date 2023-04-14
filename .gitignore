@@ -1,5 +1,7 @@
 # be careful
 .env
+.env.local
+engine
 
 # dependencies
 /node_modules

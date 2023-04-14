@@ -30,5 +30,10 @@
   "devDependencies": {
     "@types/canvas-confetti": "^1.6.0",
     "@types/react": "^18.0.35"
+  },
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
   }
 }
