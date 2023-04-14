@@ -2,6 +2,7 @@
 .env
 .env.local
 engine
+**/hardhat.config.js
 
 # dependencies
 /node_modules

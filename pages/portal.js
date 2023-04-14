@@ -1,4 +1,3 @@
-require("dotenv").config();
 import { ethers } from "ethers";
 import { useState, useEffect } from "react";
 import Web3Modal from "web3modal";
@@ -25,7 +24,7 @@ import {
   mainnet,
   cipherHH,
   simpleCrypto,
-} from "../engine/configuration.js";
+} from "../engine/configuration";
 
 export default function Sell() {
   const [user, getUser] = useState([]);
@@ -43,13 +42,12 @@ export default function Sell() {
       var web3 = new Web3(window.ethereum);
       await window.ethereum.send("eth_requestAccounts");
       var accounts = await web3.eth.getAccounts();
-      var account = accounts[3];
+      var account = accounts[0];
     }
     getUser(account);
   }
 
   async function getWalletNFTs() {
-    console.log(process.env.cipherKey);
     const provider = new ethers.providers.JsonRpcProvider(mainnet);
     const key = simpleCrypto.decrypt(cipherHH);
     const wallet = new ethers.Wallet(key, provider);
@@ -116,8 +114,12 @@ export default function Sell() {
       <Container sm>
         <Row>
           <Col>
-            <Text>
-              NFT's in Wallet <Text css={{ color: "#39FF14" }}> {user}</Text>
+            <Text h4>
+              NFT's in Wallet{" "}
+              <Text h5 css={{ color: "#39FF14" }}>
+                {" "}
+                {user}
+              </Text>
             </Text>
             <Row>
               <Button
@@ -193,7 +195,7 @@ export default function Sell() {
                         >
                           Owned by You
                         </h3>
-                        <Text>
+                        <Text h5>
                           {nft.name} Token-{nft.tokenId}
                         </Text>
                         <Text>{nft.desc}</Text>

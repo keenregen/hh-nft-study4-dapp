@@ -25,8 +25,8 @@ export const cipherHH = simpleCrypto.encrypt(hhraw);
 HardHat Testnet
 */
 
-export var hhresell = "";
-export var hhnftcol = "";
+export var hhresell = "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318";
+export var hhnftcol = "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707";
 var hhrpc = "http://localhost:8545";
 
 /*
